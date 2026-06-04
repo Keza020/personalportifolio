@@ -17,14 +17,15 @@
 
     <nav id="nav-bar" class="sticky top-0 z-50 backdrop-blur-md bg-[#0b0f19]/70 border-b border-gray-800/50 transition-colors duration-300">
         <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#home" class="text-xl font-bold bg-gradient-to-r from-teal-400 to-emerald-400 bg-clip-text text-transparent">EK.</a>
+            <a href="#home" class="text-xl font-bold bg-gradient-to-r from-teal-400 to-emerald-400 bg-clip-text text-transparent">KE.</a>
             
             <div class="flex items-center gap-6 text-sm font-medium">
                 <a href="#home" id="nav-link-1" class="text-gray-300 hover:text-teal-400 transition">Home</a>
                 <a href="#about" id="nav-link-2" class="text-gray-300 hover:text-teal-400 transition">About</a>
                 <a href="#experience" id="nav-link-3" class="text-gray-300 hover:text-teal-400 transition">Experience</a>
-                <a href="#skills" id="nav-link-4" class="text-gray-300 hover:text-teal-400 transition">Skills</a>
-                <a href="#contact" id="nav-link-5" class="text-gray-300 hover:text-teal-400 transition">Contact</a>
+                <a href="#projects" id="nav-link-4" class="text-gray-300 hover:text-teal-400 transition">Projects</a>
+                <a href="#skills" id="nav-link-5" class="text-gray-300 hover:text-teal-400 transition">Skills</a>
+                <a href="#contact" id="nav-link-6" class="text-gray-300 hover:text-teal-400 transition">Contact</a>
                 
                 <button id="theme-toggle" class="p-2 rounded-lg bg-gray-800/50 hover:text-teal-400 transition cursor-pointer" aria-label="Toggle Theme">
                     <i id="theme-icon" class="fas fa-sun text-yellow-400 text-lg"></i>
@@ -36,10 +37,10 @@
     <section id="home" class="max-w-5xl mx-auto px-6 pt-20 pb-16 flex flex-col-reverse md:flex-row items-center justify-between gap-12">
         <div class="flex-1 space-y-6 text-center md:text-left">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 text-teal-400 text-xs font-medium border border-teal-500/20">
-                <span class="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span> Open to opportunities
+                <span class="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span> SOFTWARE DEVELOPER
             </div>
             <h1 id="hero-title" class="text-4xl md:text-5xl font-extrabold tracking-tight text-white transition-colors duration-300">
-                Hi, I'm <span class="bg-gradient-to-r from-teal-400 to-emerald-400 bg-clip-text text-transparent">Etia Keza</span>
+                Hi, I'm <span class="bg-gradient-to-r from-teal-400 to-emerald-400 bg-clip-text text-transparent">Keza Etia</span>
             </h1>
             <p id="hero-desc" class="text-lg text-gray-400 max-w-xl leading-relaxed transition-colors duration-300">
                 A passionate Software Developer building functional, scalable, and user-centric digital solutions. Based in Kigali, Rwanda.
@@ -67,10 +68,10 @@
         </h2>
         <div id="about-card" class="bg-gray-900/40 border border-gray-800/60 rounded-xl p-6 md:p-8 backdrop-blur-sm space-y-4 max-w-3xl transition-colors duration-300">
             <p id="about-p1" class="text-gray-400 leading-relaxed transition-colors duration-300">
-                I am a junior software developer based in <strong id="about-strong" class="text-white font-medium transition-colors duration-300">Gasabo, Kigali</strong>, with a solid foundation in building modern web applications. 
+                I am a software developer based in <strong id="about-strong" class="text-white font-medium transition-colors duration-300">Gasabo, Kigali</strong>, with a solid foundation in building modern web applications. 
             </p>
             <p id="about-p2" class="text-gray-400 leading-relaxed transition-colors duration-300">
-                With one year of professional experience, including impactful work at <strong class="text-teal-400 font-medium">San Tech</strong>, I specialize in turning complex problems into elegant, maintainable code. I love learning new tech stacks and optimizing user experiences.
+                With a background that includes intensive training and professional development alongside hands-on software building at organizations like <strong class="text-teal-400 font-medium">San Tech</strong>, I specialize in turning complex problems into elegant, maintainable code.
             </p>
         </div>
     </section>
@@ -80,25 +81,64 @@
             <span class="text-teal-400 font-mono text-xl">02.</span> Experience
         </h2>
         <div id="exp-timeline" class="border-l-2 border-gray-800 ml-4 space-y-12 transition-colors duration-300">
+            
             <div class="relative pl-8">
-                <div id="timeline-dot" class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-teal-400 border-4 border-[#0b0f19] transition-colors duration-300"></div>
-                <div class="flex flex-col md:flex-row md:items-center justify-between gap-1 mb-2">
-                    <h3 id="role-title" class="text-lg font-bold text-white transition-colors duration-300">Software Developer <span class="text-teal-400">@ San Tech</span></h3>
-                    
+                <div name="timeline-dot" class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-teal-400 border-4 border-[#0b0f19] transition-colors duration-300"></div>
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-3">
+                    <h3 name="role-title" class="text-lg font-bold text-white transition-colors duration-300">Software Developer <span class="text-teal-400">@ San Tech</span></h3>
                 </div>
-                <ul id="exp-list" class="space-y-3 text-gray-400 text-sm max-w-3xl list-disc list-inside marker:text-teal-500 transition-colors duration-300">
+                <ul name="exp-list" class="space-y-3 text-gray-400 text-sm max-w-3xl list-disc list-inside marker:text-teal-500 transition-colors duration-300">
                     <li>Collaborated with cross-functional teams to design, develop, and deploy clean web applications.</li>
                     <li>Wrote clean, efficient, and well-documented code utilizing modern programming practices.</li>
                     <li>Assisted in troubleshooting, debugging, and optimizing software performance to enhance overall user experience.</li>
                     <li>Participated in regular code reviews to ensure high-quality, standardized software delivery.</li>
                 </ul>
             </div>
+
+            <div class="relative pl-8">
+                <div name="timeline-dot" class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-teal-400 border-4 border-[#0b0f19] transition-colors duration-300"></div>
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-3">
+                    <h3 name="role-title" class="text-lg font-bold text-white transition-colors duration-300">Software Development Trainee / Student</h3>
+                    <span name="role-tag" class="text-xs font-mono text-gray-400 bg-gray-900 px-2 py-1 rounded border border-gray-800 self-start transition-colors duration-300">1 Year Intensive</span>
+                </div>
+                <ul name="exp-list" class="space-y-3 text-gray-400 text-sm max-w-3xl list-disc list-inside marker:text-teal-500 transition-colors duration-300">
+                    <li>Dedicated one year to mastering full-stack web architectures, programming design patterns, and algorithmic problem-solving.</li>
+                    <li>Built over a dozen academic and personal engineering projects iteratively deploying responsive UI mockups and database instances.</li>
+                    <li>Studied foundational software life cycle structures, environment optimization configurations, and clean coding environments.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects" class="max-w-5xl mx-auto px-6 py-20">
+        <h2 id="projects-title" class="text-2xl font-bold text-white mb-8 flex items-center gap-3 transition-colors duration-300">
+            <span class="text-teal-400 font-mono text-xl">03.</span> Featured Projects
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div name="project-card" class="bg-gray-900/40 border border-gray-800/60 rounded-xl p-6 backdrop-blur-sm flex flex-col justify-between transition-colors duration-300">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <i class="far fa-folder text-3xl text-teal-400"></i>
+                        <a href="https://temberaurwanda-1njo.onrender.com" target="_blank" class="text-gray-400 hover:text-teal-400 transition text-xl">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    <h3 name="project-heading" class="text-xl font-bold text-white mb-2 transition-colors duration-300">Tembera U Rwanda</h3>
+                    <p name="project-desc" class="text-gray-400 text-sm leading-relaxed mb-4 transition-colors duration-300">
+                        An interactive application celebrating and exploring tourism spots across Rwanda. Built to offer users a reliable and engaging gateway to discover beautiful destinations.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-2 text-xs font-mono text-teal-400">
+                    <span>React.js</span> &bull; <span>Tailwind CSS</span> &bull; <span>Web App</span>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="skills" class="max-w-5xl mx-auto px-6 py-20">
         <h2 id="skills-title" class="text-2xl font-bold text-white mb-8 flex items-center gap-3 transition-colors duration-300">
-            <span class="text-teal-400 font-mono text-xl">03.</span> Tech Stack
+            <span class="text-teal-400 font-mono text-xl">04.</span> Tech Stack
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
             <div name="skill-card" class="bg-gray-900/30 border border-gray-800/60 rounded-xl p-5 transition-colors duration-300">
@@ -106,9 +146,15 @@
                     <i class="fas fa-code text-teal-400"></i> Languages
                 </h3>
                 <div class="flex flex-wrap gap-2">
-                    <span name="skill-badge" class="text-xs px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md transition-colors duration-300">JavaScript</span>
-                    <span name="skill-badge" class="text-xs px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md transition-colors duration-300">HTML5</span>
-                    <span name="skill-badge" class="text-xs px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md transition-colors duration-300">CSS3</span>
+                    <span name="skill-badge" class="text-xs px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md inline-flex items-center gap-1.5 transition-colors duration-300">
+                        <i class="fab fa-js text-yellow-500"></i> JavaScript
+                    </span>
+                    <span name="skill-badge" class="text-xs px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md inline-flex items-center gap-1.5 transition-colors duration-300">
+                        <i class="fab fa-html5 text-orange-500"></i> HTML5
+                    </span>
+                    <span name="skill-badge" class="text-xs px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md inline-flex items-center gap-1.5 transition-colors duration-300">
+                        <i class="fab fa-css3-alt text-blue-500"></i> CSS3
+                    </span>
                 </div>
             </div>
             <div name="skill-card" class="bg-gray-900/30 border border-gray-800/60 rounded-xl p-5 transition-colors duration-300">
@@ -116,9 +162,15 @@
                     <i class="fas fa-layer-group text-teal-400"></i> Frameworks
                 </h3>
                 <div class="flex flex-wrap gap-2">
-                    <span name="skill-badge" class="text-xs px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md transition-colors duration-300">React.js</span>
-                    <span name="skill-badge" class="text-xs px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md transition-colors duration-300">Tailwind CSS</span>
-                    <span name="skill-badge" class="text-xs px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md transition-colors duration-300">Node.js</span>
+                    <span name="skill-badge" class="text-xs px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md inline-flex items-center gap-1.5 transition-colors duration-300">
+                        <i class="fab fa-react text-sky-400"></i> React.js
+                    </span>
+                    <span name="skill-badge" class="text-xs px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md inline-flex items-center gap-1.5 transition-colors duration-300">
+                        <i class="fab fa-css3-alt text-teal-400"></i> Tailwind CSS
+                    </span>
+                    <span name="skill-badge" class="text-xs px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md inline-flex items-center gap-1.5 transition-colors duration-300">
+                        <i class="fab fa-node-js text-emerald-500"></i> Node.js
+                    </span>
                 </div>
             </div>
             <div name="skill-card" class="bg-gray-900/30 border border-gray-800/60 rounded-xl p-5 transition-colors duration-300">
@@ -126,9 +178,15 @@
                     <i class="fas fa-tools text-teal-400"></i> Tools & DBs
                 </h3>
                 <div class="flex flex-wrap gap-2">
-                    <span name="skill-badge" class="text-xs px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md transition-colors duration-300">Git & GitHub</span>
-                    <span name="skill-badge" class="text-xs px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md transition-colors duration-300">VS Code</span>
-                    <span name="skill-badge" class="text-xs px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md transition-colors duration-300">SQL</span>
+                    <span name="skill-badge" class="text-xs px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md inline-flex items-center gap-1.5 transition-colors duration-300">
+                        <i class="fab fa-git-alt text-orange-600"></i> Git & GitHub
+                    </span>
+                    <span name="skill-badge" class="text-xs px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md inline-flex items-center gap-1.5 transition-colors duration-300">
+                        <i class="fas fa-terminal text-blue-400"></i> VS Code
+                    </span>
+                    <span name="skill-badge" class="text-xs px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md inline-flex items-center gap-1.5 transition-colors duration-300">
+                        <i class="fas fa-database text-amber-500"></i> SQL
+                    </span>
                 </div>
             </div>
         </div>
@@ -136,7 +194,7 @@
 
     <section id="contact" class="max-w-5xl mx-auto px-6 py-24 text-center">
         <div class="max-w-xl mx-auto space-y-6">
-            <span class="text-teal-400 font-mono text-sm">04. What's Next?</span>
+            <span class="text-teal-400 font-mono text-sm">05. What's Next?</span>
             <h2 id="contact-title" class="text-4xl font-bold text-white tracking-tight transition-colors duration-300">Let's Work Together</h2>
             <p id="contact-desc" class="text-gray-400 text-sm md:text-base leading-relaxed transition-colors duration-300">
                 I'm currently looking for new developer opportunities to contribute my skills and grow. Whether you have a question or just want to say hi, my inbox is always open!
@@ -165,7 +223,7 @@
         
         // Element Grabbers
         const navBar = document.getElementById('nav-bar');
-        const navLinks = [1, 2, 3, 4, 5].map(id => document.getElementById(`nav-link-${id}`));
+        const navLinks = [1, 2, 3, 4, 5, 6].map(id => document.getElementById(`nav-link-${id}`));
         const heroTitle = document.getElementById('hero-title');
         const heroDesc = document.getElementById('hero-desc');
         const heroImg = document.getElementById('hero-img');
@@ -177,10 +235,7 @@
         const aboutStrong = document.getElementById('about-strong');
         const expTitle = document.getElementById('exp-title');
         const expTimeline = document.getElementById('exp-timeline');
-        const timelineDot = document.getElementById('timeline-dot');
-        const roleTitle = document.getElementById('role-title');
-        const roleTag = document.getElementById('role-tag');
-        const expList = document.getElementById('exp-list');
+        const projectsTitle = document.getElementById('projects-title');
         const skillsTitle = document.getElementById('skills-title');
         const contactTitle = document.getElementById('contact-title');
         const contactDesc = document.getElementById('contact-desc');
@@ -200,7 +255,7 @@
                 themeIcon.className = "fas fa-moon text-indigo-600 text-lg";
                 themeToggleBtn.className = "p-2 rounded-lg bg-gray-200 hover:text-teal-600 transition cursor-pointer";
                 
-                navLinks.forEach(link => link.className = "text-gray-600 hover:text-teal-600 transition");
+                navLinks.forEach(link => { if(link) link.className = "text-gray-600 hover:text-teal-600 transition" });
                 heroTitle.className = "text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 transition-colors duration-300";
                 heroDesc.className = "text-lg text-gray-600 max-w-xl leading-relaxed transition-colors duration-300";
                 heroImg.className = "w-full h-full object-cover rounded-full border-2 border-gray-200 p-2 bg-white relative z-10 transition-colors duration-300";
@@ -214,16 +269,21 @@
                 
                 expTitle.className = "text-2xl font-bold text-gray-900 mb-8 flex items-center gap-3 transition-colors duration-300";
                 expTimeline.className = "border-l-2 border-gray-200 ml-4 space-y-12 transition-colors duration-300";
-                timelineDot.className = "absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-teal-500 border-4 border-gray-50 transition-colors duration-300";
-                roleTitle.className = "text-lg font-bold text-gray-900 transition-colors duration-300";
-                roleTag.className = "text-xs font-mono text-gray-600 bg-gray-100 px-2 py-1 rounded border border-gray-200 transition-colors duration-300";
-                expList.className = "space-y-3 text-gray-600 text-sm max-w-3xl list-disc list-inside marker:text-teal-500 transition-colors duration-300";
                 
+                document.getElementsByName('timeline-dot').forEach(dot => dot.className = "absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-teal-500 border-4 border-gray-50 transition-colors duration-300");
+                document.getElementsByName('role-title').forEach(title => title.className = "text-lg font-bold text-gray-900 transition-colors duration-300");
+                document.getElementsByName('role-tag').forEach(tag => tag.className = "text-xs font-mono text-gray-600 bg-gray-100 px-2 py-1 rounded border border-gray-200 transition-colors duration-300");
+                document.getElementsByName('exp-list').forEach(list => list.className = "space-y-3 text-gray-600 text-sm max-w-3xl list-disc list-inside marker:text-teal-500 transition-colors duration-300");
+                
+                projectsTitle.className = "text-2xl font-bold text-gray-900 mb-8 flex items-center gap-3 transition-colors duration-300";
+                document.getElementsByName('project-card').forEach(card => card.className = "bg-white border border-gray-200 rounded-xl p-6 flex flex-col justify-between shadow-sm transition-colors duration-300");
+                document.getElementsByName('project-heading').forEach(heading => heading.className = "text-xl font-bold text-gray-900 mb-2 transition-colors duration-300");
+                document.getElementsByName('project-desc').forEach(desc => desc.className = "text-gray-600 text-sm leading-relaxed mb-4 transition-colors duration-300");
+
                 skillsTitle.className = "text-2xl font-bold text-gray-900 mb-8 flex items-center gap-3 transition-colors duration-300";
-                
                 document.getElementsByName('skill-card').forEach(card => card.className = "bg-white border border-gray-200 rounded-xl p-5 shadow-sm transition-colors duration-300");
                 document.getElementsByName('skill-header').forEach(header => header.className = "font-semibold mb-3 flex items-center gap-2 text-sm uppercase tracking-wider text-gray-500 transition-colors duration-300");
-                document.getElementsByName('skill-badge').forEach(badge => badge.className = "text-xs px-2.5 py-1 bg-gray-100 text-gray-700 rounded-md transition-colors duration-300");
+                document.getElementsByName('skill-badge').forEach(badge => badge.className = "text-xs px-2.5 py-1 bg-gray-100 text-gray-700 rounded-md inline-flex items-center gap-1.5 transition-colors duration-300");
                 
                 contactTitle.className = "text-4xl font-bold text-gray-900 tracking-tight transition-colors duration-300";
                 contactDesc.className = "text-gray-600 text-sm md:text-base leading-relaxed transition-colors duration-300";
@@ -237,7 +297,7 @@
                 themeIcon.className = "fas fa-sun text-yellow-400 text-lg";
                 themeToggleBtn.className = "p-2 rounded-lg bg-gray-800/50 hover:text-teal-400 transition cursor-pointer";
                 
-                navLinks.forEach(link => link.className = "text-gray-300 hover:text-teal-400 transition");
+                navLinks.forEach(link => { if(link) link.className = "text-gray-300 hover:text-teal-400 transition" });
                 heroTitle.className = "text-4xl md:text-5xl font-extrabold tracking-tight text-white transition-colors duration-300";
                 heroDesc.className = "text-lg text-gray-400 max-w-xl leading-relaxed transition-colors duration-300";
                 heroImg.className = "w-full h-full object-cover rounded-full border-2 border-gray-800 p-2 bg-[#0b0f19] relative z-10 transition-colors duration-300";
@@ -251,16 +311,21 @@
                 
                 expTitle.className = "text-2xl font-bold text-white mb-8 flex items-center gap-3 transition-colors duration-300";
                 expTimeline.className = "border-l-2 border-gray-800 ml-4 space-y-12 transition-colors duration-300";
-                timelineDot.className = "absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-teal-400 border-4 border-[#0b0f19] transition-colors duration-300";
-                roleTitle.className = "text-lg font-bold text-white transition-colors duration-300";
-                roleTag.className = "text-xs font-mono text-gray-500 bg-gray-900 px-2 py-1 rounded border border-gray-800 transition-colors duration-300";
-                expList.className = "space-y-3 text-gray-400 text-sm max-w-3xl list-disc list-inside marker:text-teal-500 transition-colors duration-300";
                 
+                document.getElementsByName('timeline-dot').forEach(dot => dot.className = "absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-teal-400 border-4 border-[#0b0f19] transition-colors duration-300");
+                document.getElementsByName('role-title').forEach(title => title.className = "text-lg font-bold text-white transition-colors duration-300");
+                document.getElementsByName('role-tag').forEach(tag => tag.className = "text-xs font-mono text-gray-500 bg-gray-900 px-2 py-1 rounded border border-gray-800 transition-colors duration-300");
+                document.getElementsByName('exp-list').forEach(list => list.className = "space-y-3 text-gray-400 text-sm max-w-3xl list-disc list-inside marker:text-teal-500 transition-colors duration-300");
+                
+                projectsTitle.className = "text-2xl font-bold text-white mb-8 flex items-center gap-3 transition-colors duration-300";
+                document.getElementsByName('project-card').forEach(card => card.className = "bg-gray-900/40 border border-gray-800/60 rounded-xl p-6 backdrop-blur-sm flex flex-col justify-between transition-colors duration-300");
+                document.getElementsByName('project-heading').forEach(heading => heading.className = "text-xl font-bold text-white mb-2 transition-colors duration-300");
+                document.getElementsByName('project-desc').forEach(desc => desc.className = "text-gray-400 text-sm leading-relaxed mb-4 transition-colors duration-300");
+
                 skillsTitle.className = "text-2xl font-bold text-white mb-8 flex items-center gap-3 transition-colors duration-300";
-                
                 document.getElementsByName('skill-card').forEach(card => card.className = "bg-gray-900/30 border border-gray-800/60 rounded-xl p-5 transition-colors duration-300");
                 document.getElementsByName('skill-header').forEach(header => header.className = "font-semibold mb-3 flex items-center gap-2 text-sm uppercase tracking-wider text-gray-400 transition-colors duration-300");
-                document.getElementsByName('skill-badge').forEach(badge => badge.className = "text-xs px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md transition-colors duration-300");
+                document.getElementsByName('skill-badge').forEach(badge => badge.className = "text-xs px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md inline-flex items-center gap-1.5 transition-colors duration-300");
                 
                 contactTitle.className = "text-4xl font-bold text-white tracking-tight transition-colors duration-300";
                 contactDesc.className = "text-gray-400 text-sm md:text-base leading-relaxed transition-colors duration-300";
