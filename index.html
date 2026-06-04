@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karamuka Keza Etia | Portfolio</title>
+    <style>
+        /* Modern Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        /* Fixed Navbar Styling */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #0f172a; /* Slate 900 */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 10px;
+        }
+
+        .nav-item {
+            color: #94a3b8; /* Slate 400 */
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        /* Hover and Active Navbar States */
+        .nav-item:hover, .nav-item.active {
+            color: #ffffff;
+            background-color: #1e293b; /* Slate 800 */
+        }
+
+        .nav-item.active {
+            border-bottom: 2px solid #3b82f6; /* Accent color indicator */
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 100px 20px 40px 20px; /* Top padding leaves room for fixed navbar */
+        }
+
+        /* Dynamic Content Visibility Settings */
+        .tab-content {
+            display: none; /* Hide sections by default */
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        .tab-content.active {
+            display: block; /* Show active section */
+        }
+
+        /* Smooth fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Profile Header Section */
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .profile-img-container {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #3b82f6;
+        }
+
+        .header-text h1 {
+            font-size: 2.2rem;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        .header-text h2 {
+            font-size: 1.25rem;
+            color: #3b82f6;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .header-text p {
+            color: #64748b;
+            font-size: 1.05rem;
+        }
+
+        /* Layout Grid and Cards */
+        .section-title {
+            font-size: 1.5rem;
+            color: #1e293b;
+            margin: 20px 0 20px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+            margin-bottom: 20px;
+        }
+
+        /* Tech Stack Table Styles */
+        .skills-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+            margin-bottom: 20px;
+        }
+
+        .skills-table th, .skills-table td {
+            padding: 14px 20px;
+            text-align: left;
+        }
+
+        .skills-table th {
+            background-color: #0f172a;
+            color: #ffffff;
+            font-weight: 600;
+            width: 30%;
+        }
+
+        .skills-table tr:nth-child(even) {
+            background-color: #f1f5f9;
+        }
+
+        /* Project & Experience Styles */
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+        }
+
+        .item-title {
+            font-size: 1.2rem;
+            color: #1e293b;
+            font-weight: 600;
+        }
+
+        .item-subtitle {
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .date {
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        .badge-container {
+            margin: 10px 0;
+        }
+
+        .badge {
+            background-color: #e0f2fe;
+            color: #0369a1;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-right: 6px;
+            display: inline-block;
+        }
+
+        .bullet-list {
+            margin-left: 20px;
+            color: #475569;
+        }
+
+        .bullet-list li {
+            margin-bottom: 6px;
+        }
+
+        /* Contact Section Links */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            padding: 14px;
+            background: #ffffff;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #334155;
+            font-weight: 500;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s ease;
+        }
+
+        .contact-link:hover {
+            border-color: #3b82f6;
+            color: #3b82f6;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                justify-content: center;
+            }
+            .nav-logo {
+                display: none; /* Hides brand name on small screens to fit menu items */
+            }
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
+            .item-header {
+                flex-direction: column;
+                gap: 5px;
+            }
+            .skills-table th, .skills-table td {
+                display: block;
+                width: 100%;
+            }
+            .skills-table th {
+                padding-bottom: 5px;
+            }
+            .skills-table td {
+                padding-top: 5px;
+                padding-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" data-target="home">Portfolio</a>
+            <ul class="nav-links">
+                <li><span class="nav-item active" data-target="home">Home</span></li>
+                <li><span class="nav-item" data-target="about">About</span></li>
+                <li><span class="nav-item" data-target="projects">Projects</span></li>
+                <li><span class="nav-item" data-target="contact">Contact</span></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div id="home" class="tab-content active">
+            <header class="header">
+                <div class="profile-img-container">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="Karamuka Keza Etia" class="profile-img" id="portfolio-avatar">
+                </div>
+                <div class="header-text">
+                    <h1>Karamuka Keza Etia</h1>
+                    <h2>Software Developer | Full-Stack Engineer</h2>
+                    <p>I am a passionate and detail-oriented Software Developer dedicated to building scalable, efficient, and user-centric digital solutions. With a strong foundation in modern programming architectures, I enjoy turning complex logic into robust, functional code.</p>
+                </div>
+            </header>
+            
+            <h2 class="section-title">✨ Welcome</h2>
+            <div class="card">
+                <p>Welcome to my interactive portfolio workspace. Use the navigation links above to dynamically view my professional experience, core software projects, and background credentials.</p>
+            </div>
+        </div>
+
+        <div id="about" class="tab-content">
+            <h2 class="section-title">🛠️ Technical Stack</h2>
+            <table class="skills-table">
+                <tr>
+                    <th>Languages</th>
+                    <td>Python, JavaScript, TypeScript, Java, SQL</td>
+                </tr>
+                <tr>
+                    <th>Frontend</th>
+                    <td>React, HTML5, CSS3, Tailwind CSS, Next.js</td>
+                </tr>
+                <tr>
+                    <th>Backend</th>
+                    <td>Node.js, Express, Django, RESTful APIs</td>
+                </tr>
+                <tr>
+                    <th>Databases</th>
+                    <td>PostgreSQL, MongoDB, MySQL</td>
+                </tr>
+                <tr>
+                    <th>Tools & DevOps</th>
+                    <td>Git, GitHub, Docker, AWS, Agile/Scrum</td>
+                </tr>
+            </table>
+
+            <h2 class="section-title">💼 Professional Experience</h2>
+            <div class="card">
+                <div class="item-header">
+                    <div>
+                        <span class="item-title">Associate Software Developer</span>
+                        <div class="item-subtitle">[Company Name]</div>
+                    </div>
+                    <div class="date">Jan 2025 – Present</div>
+                </div>
+                <ul class="bullet-list">
+                    <li>Collaborate within cross-functional agile squads to design, extend, and deploy performant web software systems.</li>
+                    <li>Author highly maintainable, thoroughly documented codebases while proactively leading peer code audits.</li>
+                    <li>Investigate production anomalies to consistently optimize overall application system throughput.</li>
+                </ul>
+            </div>
+
+            <h2 class="section-title">🎓 Education & Credentials</h2>
+            <div class="card">
+                <div class="item-title">B.S. in Computer Science</div>
+                <div class="item-subtitle" style="margin-bottom: 12px;">[University or Institution Name]</div>
+                
+                <div class="item-title" style="margin-top: 15px;">Certified Full-Stack Developer</div>
+                <div class="item-subtitle">[Issuing Organization / Bootcamp]</div>
+            </div>
+        </div>
+
+        <div id="projects" class="tab-content">
+            <h2 class="section-title">🚀 Featured Projects</h2>
+            
+            <div class="card">
+                <div class="item-header">
+                    <div class="item-title">E-Commerce Platform API</div>
+                </div>
+                <p style="color: #475569; margin-bottom: 10px;">Developed a secure, scalable RESTful API architecture for an e-commerce platform managing secure authentication, product catalogs, and order pipelines.</p>
+                <div class="badge-container">
+                    <span class="badge">Node.js</span>
+                    <span class="badge">Express</span>
+                    <span class="badge">MongoDB</span>
+                    <span class="badge">JWT</span>
+                </div>
+                <ul class="bullet-list">
+                    <li>Optimized database indexing schemas to decrease API response latency by 25%.</li>
+                    <li>Implemented secure token-based authorization protocols protecting customer transaction endpoints.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="item-header">
+                    <div class="item-title">Task Management Dashboard</div>
+                </div>
+                <p style="color: #475569; margin-bottom: 10px;">Built a dynamic, real-time project workspace environment featuring drag-and-drop kanban trackers and user collaboration modules.</p>
+                <div class="badge-container">
+                    <span class="badge">React</span>
+                    <span class="badge">Tailwind CSS</span>
+                    <span class="badge">Firebase</span>
+                </div>
+                <ul class="bullet-list">
+                    <li>Integrated responsive client-side state handling to ensure instantaneous interface fluidness.</li>
+                    <li>Leveraged live database syncing structures to enable concurrent multi-user editing pipelines.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="contact" class="tab-content">
+            <h2 class="section-title">📬 Let's Connect</h2>
+            <div class="contact-grid">
+                <a href="mailto:etiakeza24@gmail.com" class="contact-link">
+                    <span style="margin-right: 10px;">📧</span> etiakeza24@gmail.com
+                </a>
+            
+                <a href="https://github.com/Keza020" target="_blank" class="contact-link">
+                    <span style="margin-right: 10px;">💻</span> GitHub Profile
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navItems = document.querySelectorAll('.nav-item, .nav-logo');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            navItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const targetId = item.getAttribute('data-target');
+
+                    // Remove active styles from links
+                    document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+                    
+                    // Re-apply active state highlight to the navbar link clicked
+                    const matchingNav = document.querySelector(`.nav-item[data-target="${targetId}"]`);
+                    if(matchingNav) matchingNav.classList.add('active');
+
+                    // Toggle Content Views
+                    tabContents.forEach(content => {
+                        if (content.id === targetId) {
+                            content.classList.add('active');
+                        } else {
+                            content.classList.remove('active');
+                        }
+                    });
+                });
+            });
+
+            // Original avatar fallback logic
+            const imgElement = document.getElementById('portfolio-avatar');
+            if(imgElement && imgElement.src.includes("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==")) {
+                imgElement.src = "etia.png";
+            }
+        });
+    </script>
+</body>
+</html>
